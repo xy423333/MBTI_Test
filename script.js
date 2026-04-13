@@ -95,8 +95,9 @@ function restartQuiz() {
     showQuestion();
 }
 
-// ==========================
-// 启动测试
-// 页面加载时调用，显示第一题
-// ==========================
-showQuestion();
+// 点击开始按钮时执行
+function startQuiz() {
+    document.getElementById("startScreen").style.display = "none"; // 隐藏开始页
+    document.getElementById("quiz").style.display = "block"; // 显示问题
+    showQuestion(); // 开始出题
+}
