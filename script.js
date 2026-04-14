@@ -24,6 +24,11 @@ function showQuestion() {
         showResult();
         return;
     }
+    document.getElementById("question").style.opacity = "0";
+
+setTimeout(() => {
+    document.getElementById("question").style.opacity = "1";
+}, 100);
 
     const q = questions[currentQuestion];
     document.getElementById("question").textContent = q.q;
@@ -36,7 +41,17 @@ function showQuestion() {
     for(let i=0; i<q.options.length; i++) {
         const btn = document.createElement("button");
 
-        btn.className = "block w-full bg-gray-200 p-2 my-2 rounded";
+        btn.className = `
+            w-full 
+            bg-gray-100 
+            p-4 
+            rounded-2xl 
+            text-lg 
+            font-medium 
+            transition 
+            active:scale-95 
+            hover:bg-purple-500 hover:text-white
+`;
 
         btn.textContent = q.options[i];
 
